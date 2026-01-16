@@ -35,8 +35,8 @@
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -113,7 +113,7 @@
             this.btnCloseApp.Location = new System.Drawing.Point(752, 9);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Size = new System.Drawing.Size(36, 23);
-            this.btnCloseApp.TabIndex = 7;
+            this.btnCloseApp.TabIndex = 6;
             this.btnCloseApp.Text = "X";
             this.btnCloseApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCloseApp.UseVisualStyleBackColor = false;
@@ -147,6 +147,17 @@
             this.panel2.Size = new System.Drawing.Size(776, 100);
             this.panel2.TabIndex = 10;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(40, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(220, 25);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Choose .Blend file to send";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
@@ -158,17 +169,6 @@
             this.panel1.Size = new System.Drawing.Size(776, 100);
             this.panel1.TabIndex = 11;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(40, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Choose a file to send";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -177,7 +177,7 @@
             this.label4.Location = new System.Drawing.Point(40, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(161, 25);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 24;
             this.label4.Text = "Send the file to srv";
             // 
             // panel3
@@ -199,7 +199,7 @@
             this.label2.Location = new System.Drawing.Point(40, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 25);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 22;
             this.label2.Text = "Server IPv4";
             // 
             // panel4
@@ -221,7 +221,7 @@
             this.label1.Location = new System.Drawing.Point(40, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 25);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 20;
             this.label1.Text = "Server Port";
             // 
             // label5
@@ -232,7 +232,7 @@
             this.label5.Location = new System.Drawing.Point(673, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 19);
-            this.label5.TabIndex = 4;
+            this.label5.TabIndex = 26;
             this.label5.Text = "v0.01";
             // 
             // label6
@@ -243,7 +243,7 @@
             this.label6.Location = new System.Drawing.Point(12, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(165, 19);
-            this.label6.TabIndex = 14;
+            this.label6.TabIndex = 21;
             this.label6.Text = "blenderRenderSrv: Client";
             // 
             // Form1

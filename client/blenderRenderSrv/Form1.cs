@@ -18,12 +18,12 @@ namespace blenderRenderSrv
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
             private static extern IntPtr CreateRoundRectRgn(
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // width of ellipse
-            int nHeightEllipse // height of ellipse
+            int nLeftRect,     
+            int nTopRect,      
+            int nRightRect,    
+            int nBottomRect,   
+            int nWidthEllipse, 
+            int nHeightEllipse 
         );
         private string filePath = string.Empty;
         private bool filePathIsNull = true;
@@ -31,7 +31,6 @@ namespace blenderRenderSrv
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-            // Apply the rounded corners (25 is the radius)
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             this.FormBorderStyle = FormBorderStyle.None;
         }

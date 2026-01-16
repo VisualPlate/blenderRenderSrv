@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,15 @@ namespace srv
 {
     public partial class Form1 : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
 
         // Set the port and IP (IPAddress.Any listens on all local network interfaces)
         public int port = 5001;
@@ -24,6 +34,9 @@ namespace srv
         public Form1()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
 
@@ -54,6 +67,10 @@ namespace srv
             Console.WriteLine("Waiting for a connection...");
 
             string sfp = @"C:\blsrv\data.dat";
+            string sfpDir = @"C:\blsrv\";
+            if (!Directory.Exists(sfp)) {
+                Directory.CreateDirectory(sfpDir);
+            }
 
             using (TcpClient client = listener.AcceptTcpClient())
             using (NetworkStream nwStream = client.GetStream())
@@ -143,7 +160,21 @@ namespace srv
         {
             string hostname = Dns.GetHostName();
             string deviceIP = Dns.GetHostByName(hostname).AddressList[0].ToString();
-            this.Text = "Server (IPv4: " + deviceIP + ")";
+            lblSoftware.Text = "blenderRenderSrv: SRV" + hostname + ":" + deviceIP;
+        }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if (listener != null)
+            {
+                listener.Stop(); 
+            }
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
