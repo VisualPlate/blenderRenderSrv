@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -108,7 +109,8 @@ namespace srv
                 File.Move(sfp, newSfp); // changes file extension to
                 string bfp = txtBlenderpath.Text;
 
-                string pyPath = @"C:\users\j\documents\autorender.py";
+                WindowsIdentity curUser = WindowsIdentity.GetCurrent();
+                string pyPath = $@"C:\users\{curUser.Name}\documents\autorender.py";
 
                 openBlenderFile(bfp, newSfp, pyPath);
             }
@@ -160,7 +162,7 @@ namespace srv
         {
             string hostname = Dns.GetHostName();
             string deviceIP = Dns.GetHostByName(hostname).AddressList[0].ToString();
-            lblSoftware.Text = "blenderRenderSrv: SRV" + hostname + ":" + deviceIP;
+            lblSoftware.Text = "blenderRenderSrv: SRV at " + hostname + ":" + deviceIP;
         }
 
         private void btnCloseApp_Click(object sender, EventArgs e)
