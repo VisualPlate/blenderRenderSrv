@@ -1,5 +1,5 @@
 # blenderRenderSrv
-A lan TCP based server and client software that transfers .blend files from the client to server and automatically renders them  
+A lan TCP based server and client WinForms Application that transfers .blend files from the client to server and automatically renders them  
 <img title="a title" alt="Alt text" src="https://github.com/VisualPlate/blenderRenderSrv/blob/master/heroimg.webp?raw=true">
 
 ## Key Features
