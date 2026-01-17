@@ -19,9 +19,25 @@ A lan TCP based server and client WinForms Application that transfers .blend fil
 - To make rendering and Blender usage more effient by using other PC resources
 - To automate the whole process of rendering high amount of image sequences, but keeping peformance on main device
 
-
-
 *Peformance tested in Headless Mode running Windows with:  
 ** 8th i5 with iGPU and 8gb ram | 10-40% faster  
 ** 11th i7 with iGPU and 16gb ram | 15-20% faster   
 ** 12th i5 with 6gb rtx 3050 and 16gb ram | 5-7% faster  
+
+# DOCS
+## Usage General
+- Keep in mind that the server needs to have listener on before client sending
+- Download autorun.py and brsSrv_vX-XX.exe to server
+- Download brsClient_vX-XX.exe to the client
+  
+## Usage Server
+- Make sure to copy or move autorender.py to C:\users\CURRENTUSER\documents folder. 
+1. Give the server a hosting port
+2. Give the server the blender.exe path using "\", not "/"
+3. Click Start Listerner
+
+## Usage Client
+- Give the client the servers: IPv4 and the server port
+- Choose a valid .Blend file with a camera in the .blend file
+- Click Send
+
