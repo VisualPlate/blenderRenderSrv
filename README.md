@@ -33,7 +33,7 @@ A lan TCP based server and client WinForms Application that transfers .blend fil
 ## Usage Server
 - Make sure to copy or move autorender.py to C:\users\CURRENTUSER\documents folder. 
 1. Give the server a hosting port
-2. Give the server the blender.exe path using "\", not "/"
+2. Give the server the blender.exe path using "\\", not "/"
 3. Click Start Listerner
 
 ## Usage Client
