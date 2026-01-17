@@ -13,7 +13,7 @@ A lan TCP based server and client WinForms Application that transfers .blend fil
 - Have atleast the same or higher version of blender in the server
 - Be on the same network or on other TCP compatible way
 - Have only ONE frame in one frame images as this application can handle animations/images sequence as well
-- Have copied autorender.py file on C:/users/NAME/documents folder
+- Have copied autorender.py file to C:/users/NAME/documents folder from server/depencencies
 
 ## Why?
 - To make rendering and Blender usage more effient by using other PC resources
