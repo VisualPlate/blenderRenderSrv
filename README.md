@@ -9,6 +9,9 @@ A lan TCP based server and client WinForms Application that transfers .blend fil
 
 *With lower end device running on Headless Mode. Difference is visible especially on high memory scenes
 
+## Disclaimer
+This is barebone version and doesnt include any security, authentication or error checking features. It is recommended to use this only in private lan without port forwarding any IPs when using this for security reasons
+
 ## Before use Make sure to:
 - Have atleast the same or higher version of blender in the server
 - Be on the same network or on other TCP compatible way
